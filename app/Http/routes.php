@@ -43,5 +43,7 @@ Route::group(['middleware' => 'web'], function () {
 //記事の投稿
     Route::post('/new_blog', 'BlogsController@postArticle');
 
+//記事詳細画面
+    Route::get('/{id}', 'BlogsController@articleDetail');
 
 });
