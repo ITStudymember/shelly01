@@ -26,12 +26,22 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+#Route::group(['middleware' => ['web']], function () {
+#    //
+#});
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
+//新しい記事の作成画面
+    Route::get('/new_blog', function(){
+        return view('new_blog');
+});
+
+//記事の投稿
+    Route::post('/new_blog', 'BlogsController@postArticle');
+
+
 });
