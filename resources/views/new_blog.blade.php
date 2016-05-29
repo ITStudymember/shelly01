@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="/new_blog" method="post">
+<form action="/new_blog" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="container">
         <div class="row">
@@ -17,6 +17,9 @@
                     <div class="panel-body">
                         <textarea name="body"></textarea>
                     </div>
+		    <div>
+			<input type="file" name="article_img">
+		    </div>
                 </div>
             </div>
             <input type="submit" value="投稿する">

@@ -19,10 +19,19 @@ class BlogsController extends Controller
      */
     public function postArticle(Request $request)
     {
+
+//	  dd($request)
+	//画像のアップロード
+	$articleImgName = '';
+	if($request->file('article_img') != null){
+	    $articleImgName = ImagesController::uploadImage($request);
+	}
+
         $article = new Article();
 
         $article->title = $request->title;
         $article->body = $request->body;
+	$article->img_path = $articleImgName;
 
         $article->save();
 
