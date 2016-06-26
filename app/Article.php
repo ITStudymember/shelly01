@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class article extends Model
+class Article extends Model
 {
 	/**
      * 全記事の取得

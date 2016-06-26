@@ -7,6 +7,7 @@
             <div>
                 @foreach($articles as $article)
                     <div>
+			<div class="article_img"><img style="width: 20%; height: 30%;" src="/ArticleImages/{{ $article->img_path}}"></div>
                         <p><a href="/{{ $article->id }}">{{ $article->title }}</a></p>
                     </div>
                 @endforeach
